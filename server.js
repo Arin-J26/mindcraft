@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const { GROQ_API_KEY: KEY, PORT = 3000 } = process.env;
-const MODELS = (process.env.GROQ_MODELS || 'llama-3.3-70b-versatile,llama-3.1-8b-instant,openai/gpt-oss-120b,openai/gpt-oss-20b').split(',').map(s => s.trim()).filter(Boolean);
+const MODELS = (process.env.GROQ_MODELS || 'openai/gpt-oss-120b,openai/gpt-oss-20b').split(',').map(s => s.trim()).filter(Boolean);
 const clamp = (n, a, b, d) => (Number.isFinite(+n) ? Math.min(b, Math.max(a, +n)) : d);
 
 const app = express();
